@@ -1,176 +1,165 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<html lang="en">
+	<head>
+		<title>Nicholas Laranjeiro Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,800" rel="stylesheet">
-    <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
-    <title>NordBot | MAX G30 Toolkit</title>
-    <meta name="description" content="Liberate your Ninebot MAX G30 e-scooter from factory limitations with the NordBot custom firmware generator.">
-    <meta name="keywords" content="ninebot, max, es, es1, es2, es3, es4, max, g30, speed, hack, increase, cfw, custom, firmware, toolkit, electric, scooter">
-    <meta name="author" content="Nordium / ScooterHacking">
-    <link rel="icon" href="assets/img/Nord_32x32.png" type="image/png">
-</head>
+			<!-- Header -->
+				<section id="header" class="wrapper">
 
-<head>
-    <title>NordBot - MAX G30 Custom Firmware</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/assets/css/docs.min.css" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet" />
-</head>
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">My Name is Nicholas Laranjeiro</a></h1>
+							<p>I am a passionate developer and enjoy making things</p>
+						</div>
 
-<body>
-<div class="cd-popup" role="alert">
-    <div class="cd-popup-container">
-        <p>Maintaining a website, domain, and a VPS costs a considerable amount of money yearly.<br></br><br>
-            <bold>NordBot is currently and always will be free to use, but if this toolkit has given you value - consider supporting the development and hosting of the service so it can remain available and advert-free for months to come. Any support
-                is greatly appreciated and goes a long way. </bold>
-            </br>
-        </p>
-        <ul class="cd-buttons">
-            <li><a href="https://www.paypal.me/DonateNord">️ &#x2764 DONATE</a></li>
-            <li><a href="https://www.nordbot.xyz/max">&#x1F643 NO THANKS</a></li>
-        </ul> <a href="#0" class="cd-popup-close img-replace">Close</a> </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <nav aria-label="back"> <a href="https://www.nordbot.xyz/"> <i class="fas fa-arrow-left"></i> </a> </nav>
-        </div>
-        <div class="col"> <a href="https://discord.gg/eeDyQRH" class="float-right"> <img src="https://discordapp.com/assets/e4923594e694a21542a489471ecffa50.svg" alt="Join Discord" height="33" width="105"> </a> </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <h1 class="text-center">Ninebot Max G30 Custom Firmware Toolkit</h1>
-    <div class="row-fluid justify-content-center">
-        <div class="col">
-            <div class="bd-callout bd-callout-warning">
-                <h3>Disclaimer</h5>
-                    <p> Configure your own custom firmware by adjusting the options below. <br>There are safety checks in place to ensure your scooter will not be bricked.<br>Please be aware that a higher motor power constant (lower MPC value) may
-                        result in shortened life expectancy of your controller. </p>
-            </div>
-        </div>
-    </div>
-    <div class="alert alert-info"> <span class="text-danger font-weight-bold">⚠ TIP</span> To upload custom firmware and to communicate with your Ninebot MAX, use the latest version of <a href="https://www.microsoft.com/en-us/p/ninebot-flasher/9p5hws0hq55s">Ninebot-Flasher (PC)</a>                or <a href="https://play.google.com/store/apps/details?id=eScooter.m365Info">NineFlasher (Android)</a>. </div>
-    <div class="row-fluid">
-        <form>
-            <div class="form-group row"> <label for="driver-version" class="col-sm-2 col-form-label">Presets</label>
-                <div class="col-sm-10">
-                    <div class="btn-group" role="group" aria-label="Presets"> <button type="button" class="btn btn-primary preset preset--">Stock</button> <button type="button" class="btn btn-primary preset preset--">DaddyNord 1.0</button> <button type="button" class="btn btn-primary preset preset--">DaddyNord 2.0</button>                                <button type="button" class="btn btn-primary preset preset--">MAXed Out</button> </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row-fluid">
-        <hr> </div>
-    <div class="row-fluid">
-        <form method="POST" id="downloadForm">
-            <div class="form-group row"> <label for="driver-version" class="col-sm-2 col-form-label">Base Version</label>
-                <div class="col-sm-10"> <select name="version" class="custom-select mr-sm-2" id="driver-version" aria-describedby="driver-version-help"> <option value="DRV126" selected>1.2.6</option> </select> </div>
-            </div>
-            <div class="form-group row"> <label for="output-file" class="col-sm-2 col-form-label">Flashing Method</label>
-                <div class="col-sm-10"> <select name="output" class="custom-select mr-sm-2" id="output-file" aria-describedby="output-file-help"> <option value="zip2">Android V2</option> <option value="zip" selected>Android</option> <option value="enc">Windows</option> <option value="bin">Developer</option> </select>                            <small id="output-file-help" class="form-text text-muted"> Select <b>Android V2</b> if you want to flash using <a href="https://play.google.com/store/apps/details?id=eScooter.m365Info"><img src="assets/img/android.png" /img>NineFlasher </a> <br/> Select <b>Android</b> if you want to flash using <a href="https://play.google.com/store/apps/details?id=fun.ninebot.utility"><img src="assets/img/android.png" /img>NinebotFun </a> / <a href="https://play.google.com/store/apps/details?id=com.esdowngrade"><img src="assets/img/android.png" /img>ES DownG</a> / <a href="https://play.google.com/store/apps/details?id=eScooter.m365Info"><img src="assets/img/android.png" /img>NineFlasher </a> <br/> Select <b>Windows</b> if you want to flash using <a href="https://www.microsoft.com/en-us/p/ninebot-flasher/9p5hws0hq55s?activetab=pivot:overviewtab"><img src="assets/img/windows.png" /img>Ninebot-Flasher </a> / py9b / <a href="https://github.com/FalkorDev/NineRiFt-Lite"><img src="assets/img/windows.png" /img>NineRift </a><br> Select <b>Developer</b> if you're a developer. Don't flash that file (you should know this already). </small>                            </div>
-            </div>
-            <div class="form-group row"> <label for="name" class="col-sm-2 col-form-label">File Name</label>
-                <div class="col-sm-10">
-                    <div class="input-group"> <input name="name" type="text" maxlength="18" placeholder="myCustomFirmware" value="myCustomFirmware" class="form-control">
-                        <div class="input-group-append"> <label class="input-group-text"> <input class="patch-input" type="checkbox">&nbsp;Patch? </label> </div>
-                    </div><small id="name-help" class="form-text text-muted"> Optional, must be alphanumeric and less than or equal to 18 chars. </small> </div>
-            </div>
-            <div class="form-group row"> <label for="speed-normal-kmh" class="col-sm-2 col-form-label">Sport Mode Max Speed</label>
-                <div class="col-sm-10">
-                    <div class="input-group"> <input name="speed_normal_kmh" type="text" value="33" class="form-control">
-                        <div class="input-group-append"> <label class="input-group-text"> <input class="patch-input" type="checkbox">&nbsp;Patch? </label> </div>
-                    </div><small id="speed-normal-kmh-help" class="form-text text-bold"><u> Requires <a href="https://www.facebook.com/groups/2033681930269954/permalink/2199481160356696/">an N4GSD1111CXXXX serial number</a>. </u><br><span class="text-danger font-weight-bold">The maximum speed of the MAX even with CFW is 33km/h. <u>This patch only increases speed if you have a hardware mod that increases voltage.</u></span> </small>                            </div>
-            </div>
-    </div>
-    <div class="form-group row"> <label for="cruise-control-delay" class="col-sm-2 col-form-label">Cruise Control Delay</label>
-        <div class="col-sm-10">
-            <div class="input-group"> <input name="cruise_control_delay" type="number" step="1" min="1" max="100" value="5" class="form-control">
-                <div class="input-group-append"> <label class="input-group-text"> <input class="patch-input" type="checkbox">&nbsp;Patch? </label> </div>
-            </div><small id="cruise-control-delay-help" class="form-text text-muted"> How many seconds before Cruise Control automatically enables (if the throttle is in the same position for the specified time). </small> </div>
-    </div>
-    <div class="form-group row"> <label for="motor-start-speed" class="col-sm-2 col-form-label">Motor Start Speed</label>
-        <div class="col-sm-10">
-            <div class="input-group"> <input name="motor_start_speed" step="1" min="0" max="10" type="number" class="form-control" value="5">
-                <div class="input-group-append"> <label class="input-group-text"> <input class="patch-input" type="checkbox">&nbsp;Patch? </label> </div>
-            </div><small id="motor-start-speed-help" class="form-text text-muted"> Minimum speed in km/h before the motor will start. </small> </div>
-    </div>
-    <div class="form-group row"> <label for="motor-power-constant" class="col-sm-2 col-form-label">Motor Power Constant</label>
-        <div class="col-sm-10">
-            <div class="input-group"> <input class="form-control" name="motor_power_constant" type="text" step="1" min="20000" max="65535" value="51575">
-                <div class="input-group-append"> <label class="input-group-text"> <input class="patch-input" type="checkbox">&nbsp;Patch? </label> </div>
-            </div><small id="motor-power-constant-help" class="form-text text-muted"> Lower = More power. Too much power is not recommended for controller longevity. <br><span class="text-danger font-weight-bold"> Refer to <a href="https://www.facebook.com/groups/2033681930269954/permalink/2199481160356696/">this chart</a> for real-world MPC performance data. </span> </small>                    </div>
-    </div>
-    <!-- Compatibility <div class="form-group row"> <div class="col"> <div class="custom-control custom-switch"> <input name="compat_patches" type="checkbox" class="custom-control-input" id="compat-patches" checked="true"> <label class="custom-control-label" for="compat-patches">Compatibility patches</label> </div><small id="compat-patches-help" class="form-text text-muted"> These patches are made to improve the base firmware. They currently allow you to change your serial number. </small> </div></div>-->
-    <div class="form-group row">
-        <div class="col">
-            <div class="custom-control custom-switch"> <input name="version_spoofing" type="checkbox" class="custom-control-input" id="version-spoofing"> <label class="custom-control-label" for="version-spoofing">Version spoofing</label> </div><small id="version-spoofing-help" class="form-text text-muted"> Changes the version number to 5.2.6 to avoid Ninebot from sending OEM updates to your scooter while CFW is in use. </small>                    </div>
-    </div>
-    <div class="form-group row">
-        <div class="col">
-            <div class="custom-control custom-switch"> <input name="no_kers" type="checkbox" class="custom-control-input" id="no-kers"> <label class="custom-control-label" for="no-kers">No KERS</label> </div><small id="no-kers-help" class="form-text text-muted"> The scooter won't start braking on it's own when the motor is not active. <br>You will still retain recuperative braking when using the brake lever. <br><span class="text-danger font-weight-bold"> Disabling KERS might result in failure of the control board and in injuries caused by strong, sudden braking. <a target="_blank" href="https://media3.giphy.com/media/YJjvTqoRFgZaM/giphy.gif?cid=790b7611dee80abdf7cbde7e9eb72687fb6aa00952a144c3&rid=giphy.gif">(...)</a> </span> </small>                    </div>
-    </div>
-    <!-- Enable SWD <div class="form-group row"> <div class="col"> <div class="custom-control custom-switch"> <input name="swd_enable" type="checkbox" class="custom-control-input" id="swd-enable"> <label class="custom-control-label" for="swd-enable">Enable SWD</label> </div><small id="swd-enable-help" class="form-text text-muted"> Enables the SWD interface, allowing real-time debugging using ST-Link. <span class="badge badge-warning">Testing!</span> </small> </div></div>-->
-    <div class="form-group row">
-        <div class="col">
-            <div class="custom-control custom-switch"> <input name="bypass_BMS" type="checkbox" class="custom-control-input" id="bypass-bms"> <label class="custom-control-label" for="bypass-bms">Bypass Ninebot BMS requirement</label> </div><small id="bypass-bms-help" class="form-text text-muted"> Allows the scooter to run on any battery without the need of a Ninebot BMS. (also prevents any battery-related errors from arising.) <span class="badge badge-danger">Experimental!</span><br><i>Warning: Without a proper BMS connected, the scooter won't provide any info on the current battery state, voltage, or remaining capacity.</i> </small>                    </div>
-    </div>
-    <div class="form-group row">
-        <div class="col">
-            <div class="custom-control custom-switch"> <input name="throttle_alg" type="checkbox" class="custom-control-input" id="current-based-throttle-algorithm"> <label class="custom-control-label" for="current-based-throttle-algorithm">Current-Based Throttle Algorithm</label> </div>
-            <small
-                    id="current-based-throttle-algorithm-help" class="form-text text-muted"> Instead of speed-based, the throttle will work on a power-based algorithm (like in a thermal engine vehicle).<br/> Max Speed patch is ignored if you enable this. </small>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col">
-            <div class="custom-control custom-switch"> <input name="stay_on_locked" type="checkbox" class="custom-control-input" id="stay-on-locked"> <label class="custom-control-label" for="stay-on-locked">Disable Timeout when Locked</label> </div><small id="stay-on-locked-help" class="form-text text-muted"> Disables auto shutdown when the scooter is locked so it stays on until user input is present. </small>                    </div>
-    </div>
-    <!-- Remove Charging Mode <div class="form-group row"> <div class="col"> <div class="custom-control custom-switch"> <input name="remove_charging_mode" type="checkbox" class="custom-control-input" id="remove-charging-mode"> <label class="custom-control-label" for="remove-charging-mode">Remove Charging Mode</label> </div><small id="remove-charging-mode-help" class="form-text text-muted"> ESC will ignore input from the charging line, scooter will be rideable during charge. Useful for non-official external batteries. </small> </div></div>-->
-    <!-- Change ESC<->BMS baud rate to 76800 <div class="form-group row"> <div class="col"> <div class="custom-control custom-switch"> <input name="bms_uart_76800" type="checkbox" class="custom-control-input" id="change-esc-bms-rate"> <label class="custom-control-label" for="change-esc-bms-rate">Change ESC<->BMS baud rate to 76800</label> </div><small id="change-esc-bms-rate-help" class="form-text text-muted"> Only if you use the <a href="https://max.scooterhacking.org/#">nonexistent compatible open source BMS!</a> </small> </div></div>-->
-    <div class="form-group row">
-        <div class="col"> </div>
-    </div>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="col">
-            <button class="btn btn-primary float-right" type="submit">Download CFW Profile</button>
-        </div>
-    </div>
-    </form>
-    
-    <hr>
-    <div class="alert alert-info"> <span class="text-danger font-weight-bold">⚠ INFO</span> This toolkit is based off of the original ScooterHacking API. </div>
-    <hr>
-    <div class="alert alert-primary">
-        <h4 class="alert-heading">Support the Creators</h4>
-        <hr> <i class="fas fa-hand-holding-usd"></i> Donate to <a href="https://www.paypal.me/DonateNord" class="alert-link">Nordium (NordBot Dev/Host/Web Maintainer)</a><br><i class="fas fa-hand-holding-usd"></i> Donate to <a href="https://www.paypal.me/brentlobegeier"
-                                                                                                                                                                                                                                   class="alert-link">Brent (NordBot backend testing)</a><br><i class="fas fa-hand-holding-usd"></i> Donate to <a href="https://www.paypal.me/majsinko" class="alert-link">majsi (CFW scripting)</a><br><i class="fas fa-hand-holding-usd"></i>                Donate to <a href="https://www.paypal.me/camialfa" class="alert-link">CamiAlfa (ES DownG)</a><br><i class="fas fa-hand-holding-usd"></i> Donate to <a href="https://paypal.me/scooterhacking" class="alert-link">ScooterHacking.org (API maintainer)</a><br></div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/caaa8631ad.js"></script>
-<script src="/static/form.js?2.0" type="text/javascript"></script>
-<script data-ad-client="ca-pub-0630292531971374" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140520207-1"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/js/foundation.min.js'></script>
-<script src="handlerjs.js"></script>
-<script src="antish.js"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+						<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="https://github.com/nicklaranjeiro" target="_blank"><i class="fab fa-github"></i></i>GitHub</a></li>
+								<li class="current"><a href="https://www.linkedin.com/in/nicholas-laranjeiro-5027b5114/" target="_blank"><i class="fab fa-linkedin"></i></i>LinkedIn</a></li>
+								<li class="current"><a href="Resume.pdf" download><i class="fab fa-wpforms"></i></i>Resume</a></li>
+							</ul>
+						</nav>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-140520207-1');
-</script>
-</body>
+				</section>
 
+			<!-- Intro -->
+				<section id="intro" class="wrapper style1">
+					<div class="title">Work Experience</div>
+					<div class="container">
+						<p class="style1">
+							<b>Front End Software Developer</b> <br>ComQi (May 2019 - Aug 2019)<br>
+								<ul style="list-style: none;">
+									<li>Implemented front-end software components for content management systems</li>
+									<li>Used Angular 7, JavaScript, HTML & CSS in VS Code using Git as source control</li>
+									<li>Worked with other team members to implement product designs, requirements, and produce high quality software</li>
+								</ul>
+								
+						</p>
+						<hr>
+						<p class="style1">
+							<b>Student Solutions Developer</b> <br> PHRI (Sept 2018 - Jan 2019)<br>
+								<ul style="list-style: none;">
+									<li>Worked on applications that were used for medical studies</li>
+									<li>Used C#, Javascript, XML, HTML& CSS in Visual Studios along with SQL Server</li>
+									<li>Applied my knowledge of Object Oriented and .NET framework concepts to solve bugs and add needed requirements</li>
+								</ul>
+								
+						</p>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="wrapper style2">
+					<div class="title">Personal Projects</div>
+					<div class="container">
+
+						<!-- Features -->
+							<section id="features">
+								<div class="feature-list">
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="fab fa-envira">FamilyUs Website</h3>
+												<ul>
+													<li>Helps families plan events together using a sharable Calendar</li>
+													<li>Technologies Used: HTML5, JavaScript, PHP, Bootstrap</li>
+												</ul>
+												<a href="https://github.com/nicklaranjeiro/CalendarPlanner" target="_blank">Code</a> | <a href="https://csunix.mohawkcollege.ca/~000375014/capstone/CodeIgniter-3.1.10/index.php/home/" target="_blank">Website</a>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="fab fa-leanpub">SchoolEm Website</h3>
+												<ul>
+													<li>Program helps users find their desired school in the Hamilton area</li>
+													<li>Technologies Used: HTML5, JavaScript, PHP, Bootstrap, Google Maps & Street API</li>
+												</ul>
+												<a href="https://github.com/nicklaranjeiro/schoolem" target="_blank">Code</a> | <a href="https://schoolem.herokuapp.com/" target="_blank">Website</a>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="fab fa-twitch">Twitch Bot</h3>
+												<ul>
+													<li>Interactive twitch chat bot that play games with the users and responds to their commands</li>
+													<li>Technologies Used: Node.js, JavaScript, Twitch API</li>
+												</ul>
+												<a href="https://github.com/nicklaranjeiro/twitchBot" target="_blank">Code</a>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="fab fa-discord">Discord Bot</h3>
+												<ul>
+													<li>Interactive discord chat bot that responds to users commands and plays music</li>
+													<li>Technologies Used: Node.js, JavaScript, Discord, and YouTube API</li>
+												</ul>
+												<a href="https://github.com/nicklaranjeiro/discordBot" target="_blank">Code</a>
+											</section>
+										</div>
+									</div>
+								</div>
+							</section>
+
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">Contact Me</div>
+					<div class="container">
+						<div class="row">
+							
+							<div class="col-12 col-12-large" style="margin-bottom: 25px;">
+
+								<!-- Contact -->
+									<section class="feature-list small">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-envelope">Email</h3>
+													<p>
+														nicholaslaranjeiro@hotmail.com
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-phone">Phone</h3>
+													<p>
+														(905) 979-9232
+													</p>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
