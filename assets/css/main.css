@@ -295,6 +295,10 @@ form {
   width: 68em;
 }
 
+.infoFormatting li{
+  margin: 0 10rem;
+}
+
 @media screen and (max-width: 1680px) {
   .container {
     width: 70em;
@@ -1049,6 +1053,10 @@ form {
 }
 
 @media screen and (max-width: 980px) {
+  .infoFormatting li{
+    margin: 0;
+  }
+
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -1292,6 +1300,7 @@ form {
 }
 
 @media screen and (max-width: 736px) {
+  
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -2202,7 +2211,7 @@ ul.actions.special {
 #logo p {
   color: #eee;
   color: rgba(255, 255, 255, 0.5);
-  margin: 1.25em 0 0 0;
+  margin: 1.25em 15em 0em 15em;
   display: block;
   font-size: 0.85em;
 }
@@ -2996,7 +3005,7 @@ ul.actions.special {
   }
 
   .homepage #header {
-    height: 20em;
+    height: 28em;
   }
 
   /* Logo */
@@ -3005,6 +3014,8 @@ ul.actions.special {
     text-align: center;
     padding-left: 2em;
     padding-right: 2em;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   #logo h1 {
@@ -3099,5 +3110,5 @@ ul.actions.special {
 
   #copyright ul li:first-child {
     margin-top: 0;
-  }
+  }  
 }
